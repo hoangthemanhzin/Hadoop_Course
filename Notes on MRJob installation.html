@@ -1,0 +1,12 @@
+<p>In the next activity, we'll walk you through installing the "mrjob" package for MapReduce on the&nbsp;HDP&nbsp;Sandbox.</p><h4>Installing mrjob on HDP&nbsp;2.65</h4><p>The following video will walk you through these steps, but you may find it helpful to have the commands in writing so you can just copy and paste them as you go (be sure to "su root"&nbsp;first, as shown in the video.)</p><p><br></p><pre class="prettyprint linenums">yum-config-manager --save --setopt=HDP-SOLR-2.6-100.skip_if_unavailable=true
+yum install https://repo.ius.io/ius-release-el7.rpm https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+yum install python-pip
+pip install pathlib
+pip install mrjob==0.7.4
+pip install PyYAML==5.4.1
+yum install nano
+wget http://media.sundog-soft.com/hadoop/RatingsBreakdown.py
+wget http://media.sundog-soft.com/hadoop/ml-100k/u.data</pre><p><br></p><h4>Installing mrjob on HDP&nbsp;2.5</h4><p>While going through the next activity, many students are running into an error when entering the command:</p><p><code>pip install google-api-python-client==1.6.4</code></p><p>This seems to arise from a mismatch between python-pip and Python 2.6, but I'm not sure why it only happens for some students and not others. If you do run into this, just update your sandbox to Python 2.7 by entering the following commands:</p><pre class="prettyprint linenums">yum install scl-utils
+yum install centos-release-scl
+yum install python27
+scl enable python27 bash</pre><p>Now, you should be able to </p><p><code>pip install google-api-python-client==1.6.4</code></p><p>successfully.</p><p> </p><p>If you're still having trouble, please use the Q&amp;A&nbsp;feature for this lecture and we'll help you out.<br></p>
